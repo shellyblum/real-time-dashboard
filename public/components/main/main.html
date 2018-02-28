@@ -1,0 +1,44 @@
+<div class="container">
+  <h3> Welcome <b>{{mynickname}}</b>!</h3>
+  <!-- <h2>Online Clients</h2> -->
+  <div class="row">
+      <div ng-repeat="user in users" class="col-sm-6">
+          <!-- <p>{{$ctrl.OS}}</p> -->
+          <div class="card">
+              <div class="headerCard" ng-class="$navidator.online ? 'online' : 'offline'">
+                  <i class="fa fa-check-circle" style="font-size:38px;color:white;"></i> {{user.ip}}
+              </div>
+              <div class="card-block">
+                  <blockquote class="card-blockquote">
+                      <span class='label btn-mini label-default userlabel'>
+                        <i class='fa fa-user'></i>
+                          {{user.nickname}}
+                      </span>
+                      <p>OS : {{user.os}}</p>
+                      <p>Type : {{user.type}}</p>
+                      <p>Local Time : {{user.localTime | date: 'h:mma'}}</p>
+                      <p>Time Zone : {{user.timeZone}}</p>
+                      <p>Online :{{user.online}}</p>
+                  </blockquote>
+              </div>
+          </div>
+      </div>
+  </div>
+  <h2>Existing Clients</h2>
+  <div class="row">
+      <div ng-repeat="i in initUsers" class="col-sm-6">
+          <div class="card">
+              <div class="headerCard" style="background-color:#5cb85c">
+                  <i class="fa fa-check-circle" style="font-size:38px;color:white;"></i> {{i.ip}}
+              </div>
+              <div class="card-block">
+                  <blockquote class="card-blockquote">
+                      <p>OS : {{i.os}}</p>
+                      <p>Type : {{i.type}}</p>
+                      <p>Online :{{i.online}}</p>
+                  </blockquote>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
