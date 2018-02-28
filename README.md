@@ -1,4 +1,4 @@
-# Socket.io Chat App using AngularJS
+# Dashboard application
 
 ` bower install `
 
